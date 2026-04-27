@@ -1,6 +1,7 @@
 # 2.17 (unreleased)
 
 * Drop support for Python 3.9 (Hugo van Kemenade, #416).
+* Add support for Python 3.15 (Hugo van Kemenade, #TODO).
 
 # 2.16 (2026-03-25)
 
