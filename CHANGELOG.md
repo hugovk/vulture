@@ -1,3 +1,7 @@
+# 2.17 (unreleased)
+
+* Drop support for Python 3.9 (Hugo van Kemenade, #416).
+
 # 2.16 (2026-03-25)
 
 * Fix false positives for dead code after while loops (#412, #413, Jendrik Seipp).
