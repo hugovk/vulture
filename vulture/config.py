@@ -15,6 +15,7 @@ from .version import __version__
 
 #: Possible configuration options and their respective defaults
 DEFAULTS = {
+    "color": "auto",
     "config": "pyproject.toml",
     "min_confidence": 0,
     "paths": [],
@@ -25,6 +26,8 @@ DEFAULTS = {
     "sort_by_size": False,
     "verbose": False,
 }
+
+COLOR_CHOICES = ("yes", "no", "auto")
 
 
 class InputError(Exception):
@@ -56,6 +59,10 @@ def _check_output_config(config):
     """
     if not config["paths"]:
         raise InputError("Please pass at least one file or directory")
+    if config["color"] not in COLOR_CHOICES:
+        raise InputError(
+            f"color must be one of {COLOR_CHOICES}, got {config['color']!r}"
+        )
 
 
 def _parse_toml(infile):
@@ -159,6 +166,13 @@ def _parse_args(args=None):
         action="store_true",
         default=missing,
         help="Sort unused functions and classes by their lines of code.",
+    )
+    parser.add_argument(
+        "-c",
+        "--color",
+        choices=COLOR_CHOICES,
+        default=missing,
+        help="Colour the output (default: auto).",
     )
     parser.add_argument(
         "--config",

@@ -1,3 +1,7 @@
+# 2.17 (unreleased)
+
+* Colour output and add `-c`/`--color {yes,no,auto}` option (#415, Hugo van Kemenade).
+
 # 2.16 (2026-03-25)
 
 * Fix false positives for dead code after while loops (#412, #413, Jendrik Seipp).
