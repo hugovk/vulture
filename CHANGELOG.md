@@ -1,6 +1,7 @@
 # 2.17 (unreleased)
 
 * Colour output and add `-c`/`--color {yes,no,auto}` option (#415, Hugo van Kemenade).
+* Add support for Python 3.15 and drop 3.9 (Hugo van Kemenade, #416).
 
 # 2.16 (2026-03-25)
 

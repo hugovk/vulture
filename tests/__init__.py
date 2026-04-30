@@ -41,7 +41,9 @@ def check_unreachable(v, lineno, size, name):
 
 def check_multiple_unreachable(v, checks):
     assert len(v.unreachable_code) == len(checks)
-    for item, (lineno, size, name) in zip(v.unreachable_code, checks):
+    for item, (lineno, size, name) in zip(
+        v.unreachable_code, checks, strict=True
+    ):
         assert item.first_lineno == lineno
         assert item.size == size
         assert item.name == name

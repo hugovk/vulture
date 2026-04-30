@@ -1,7 +1,3 @@
-import sys
-
-import pytest
-
 from vulture.utils import ExitCode
 
 from . import check, v
@@ -798,9 +794,6 @@ foo(1, 2)
     check(v.unused_funcs, [])
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 10), reason="requires python3.10 or higher"
-)
 def test_match_class_simple(v):
     v.scan(
         """\
@@ -830,9 +823,6 @@ match x:
     check(v.unused_vars, ["u"])
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 10), reason="requires python3.10 or higher"
-)
 def test_match_class_embedded(v):
     v.scan(
         """\
@@ -866,9 +856,6 @@ match x:
     check(v.unused_vars, ["u"])
 
 
-@pytest.mark.skipif(
-    sys.version_info < (3, 10), reason="requires python3.10 or higher"
-)
 def test_match_enum(v):
     v.scan(
         """\
